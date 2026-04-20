@@ -1,0 +1,15 @@
+import pandas as pd
+
+def create_pivot(data, index, columns, values, aggfunc):
+    """
+    Returns: nested dict {column_value: {index_value: agg_result}}
+    """
+    df = pd.DataFrame(data)
+    pt = pd.pivot_table(
+        df,
+        values=values,
+        index=index,
+        columns=columns,
+        aggfunc=aggfunc
+    ).fillna(0)
+    return pt.to_dict()
