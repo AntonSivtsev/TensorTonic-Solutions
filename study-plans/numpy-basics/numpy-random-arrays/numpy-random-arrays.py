@@ -10,5 +10,3 @@ def generate_random_array(shape, kind, seed):
         return np.random.random(shape)
     if kind == "normal":
         return np.random.standard_normal(shape)
-
-    return a
